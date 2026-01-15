@@ -1,0 +1,6 @@
+name = "leanslop"
+version = "0.1.0"
+defaultTargets = ["LeanSlop"]
+
+[[lean_lib]]
+name = "LeanSlop"
