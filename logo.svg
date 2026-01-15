@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <defs>
+    <!-- Slop gradient - gooey purple/pink -->
+    <linearGradient id="slopGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="50%" style="stop-color:#A855F7"/>
+      <stop offset="100%" style="stop-color:#D946EF"/>
+    </linearGradient>
+    <!-- Drip gradient -->
+    <linearGradient id="dripGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#A855F7"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+    <!-- Lean blue accent -->
+    <linearGradient id="leanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#06B6D4"/>
+    </linearGradient>
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Slop drip filter -->
+    <filter id="sloppy" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </defs>
+  
+  <!-- Background glow -->
+  <ellipse cx="200" cy="100" rx="150" ry="60" fill="url(#slopGradient)" opacity="0.15"/>
+  
+  <!-- Lean bracket left -->
+  <text x="30" y="115" font-family="JetBrains Mono, Fira Code, monospace" font-size="72" font-weight="bold" fill="url(#leanGradient)" filter="url(#glow)">⟨</text>
+  
+  <!-- SLOP text with drips -->
+  <g filter="url(#sloppy)">
+    <!-- Main SLOP text -->
+    <text x="85" y="120" font-family="Arial Black, sans-serif" font-size="80" font-weight="900" fill="url(#slopGradient)" filter="url(#glow)">SLOP</text>
+    
+    <!-- Dripping effects -->
+    <ellipse cx="108" cy="135" rx="8" ry="12" fill="url(#dripGradient)"/>
+    <ellipse cx="108" cy="155" rx="5" ry="8" fill="url(#dripGradient)" opacity="0.8"/>
+    <ellipse cx="108" cy="170" rx="3" ry="5" fill="url(#dripGradient)" opacity="0.6"/>
+    
+    <ellipse cx="178" cy="130" rx="6" ry="10" fill="url(#dripGradient)"/>
+    <ellipse cx="178" cy="148" rx="4" ry="6" fill="url(#dripGradient)" opacity="0.7"/>
+    
+    <ellipse cx="248" cy="132" rx="7" ry="11" fill="url(#dripGradient)"/>
+    <ellipse cx="248" cy="152" rx="5" ry="7" fill="url(#dripGradient)" opacity="0.8"/>
+    <ellipse cx="248" cy="167" rx="3" ry="4" fill="url(#dripGradient)" opacity="0.5"/>
+    
+    <ellipse cx="295" cy="128" rx="5" ry="8" fill="url(#dripGradient)"/>
+  </g>
+  
+  <!-- Lean bracket right -->
+  <text x="320" y="115" font-family="JetBrains Mono, Fira Code, monospace" font-size="72" font-weight="bold" fill="url(#leanGradient)" filter="url(#glow)">⟩</text>
+  
+  <!-- Subtitle -->
+  <text x="200" y="175" font-family="JetBrains Mono, Fira Code, monospace" font-size="14" fill="#9CA3AF" text-anchor="middle">LLM-powered proofs for Lean 4</text>
+  
+  <!-- Small lambda/proof symbol accent -->
+  <text x="65" y="55" font-family="serif" font-size="24" fill="url(#leanGradient)" opacity="0.6">λ</text>
+  <text x="320" y="55" font-family="serif" font-size="24" fill="url(#slopGradient)" opacity="0.6">∀</text>
+  <text x="345" y="75" font-family="serif" font-size="18" fill="url(#dripGradient)" opacity="0.5">→</text>
+  <text x="45" y="75" font-family="serif" font-size="18" fill="url(#leanGradient)" opacity="0.5">∃</text>
+</svg>
