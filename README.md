@@ -1,3 +1,20 @@
+<p align="center">
+  <img src="logo.svg" alt="LeanSlop" width="500"/>
+</p>
+
+<p align="center">
+  <em>slop slop slop slop slop</em>
+</p>
+
+<p align="center">
+  <a href="#quickstart">Quickstart</a> •
+  <a href="#configuration">Configuration</a> •
+  <a href="#the-slop-tactic">Usage</a> •
+  <a href="#contributing">Contributing</a>
+</p>
+
+---
+
 # LeanSlop: LLM-slop black box automation for the Lean4 theorem prover
 LeanSlop is an LLM-powered proof assistant for Lean 4. It integrates
 directly into your editor, allowing you to invoke AI models to help
