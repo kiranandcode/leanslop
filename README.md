@@ -16,10 +16,18 @@ With [elan](https://github.com/leanprover/elan) installed, `lake build` should s
 
 ## Adding LeanSlop to Your Project
 
-To use LeanSlop in a Lean 4 project, first add this package as a dependency. In your `lakefile.lean`, add
+To use LeanSlop in a Lean 4 project, first add this package as a
+dependency. Add the following require in your `lakefile.toml`:
+```toml
+[[require]]
+name = "leanslop"
+git = "https://github.com/kiranandcode/leanslop"
+```
+
+For lake users, instead in your `lakefile.lean`, add
 
 ```lean
-require leanslop from git "https://github.com/kirancodes/leanslop"
+require leanslop from git "https://github.com/kiranandcode/leanslop"
 ```
 
 You also need to make sure that your `lean-toolchain` file contains the same version of Lean 4 as LeanSlop's.
